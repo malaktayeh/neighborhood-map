@@ -1,0 +1,436 @@
+{
+    "meta": {
+        "code": 200,
+        "requestId": "5bc2131cdb04f55c41dbf971"
+    },
+    "response": {
+        "venues": [
+            {
+                "id": "4a299005f964a520a8951fe3",
+                "name": "Greeley Square",
+                "location": {
+                    "address": "968 Avenue of the Americas",
+                    "crossStreet": "btwn W 32nd & 33rd St",
+                    "lat": 40.74866717767752,
+                    "lng": -73.98837625980377,
+                    "labeledLatLngs": [
+                        {
+                            "label": "display",
+                            "lat": 40.74866717767752,
+                            "lng": -73.98837625980377
+                        }
+                    ],
+                    "distance": 243,
+                    "postalCode": "10018",
+                    "cc": "US",
+                    "city": "New York",
+                    "state": "NY",
+                    "country": "United States",
+                    "formattedAddress": [
+                        "968 Avenue of the Americas (btwn W 32nd & 33rd St)",
+                        "New York, NY 10018",
+                        "United States"
+                    ]
+                },
+                "categories": [
+                    {
+                        "id": "4bf58dd8d48988d163941735",
+                        "name": "Park",
+                        "pluralName": "Parks",
+                        "shortName": "Park",
+                        "icon": {
+                            "prefix": "https://ss3.4sqi.net/img/categories_v2/parks_outdoors/park_",
+                            "suffix": ".png"
+                        },
+                        "primary": true
+                    }
+                ],
+                "referralId": "v-1539445532",
+                "hasPerk": false
+            },
+            {
+                "id": "412d2800f964a520df0c1fe3",
+                "name": "Central Park",
+                "location": {
+                    "address": "59th St to 110th St",
+                    "crossStreet": "5th Ave to Central Park West",
+                    "lat": 40.78408342593807,
+                    "lng": -73.96485328674316,
+                    "labeledLatLngs": [
+                        {
+                            "label": "display",
+                            "lat": 40.78408342593807,
+                            "lng": -73.96485328674316
+                        }
+                    ],
+                    "distance": 4227,
+                    "postalCode": "10028",
+                    "cc": "US",
+                    "city": "New York",
+                    "state": "NY",
+                    "country": "United States",
+                    "formattedAddress": [
+                        "59th St to 110th St (5th Ave to Central Park West)",
+                        "New York, NY 10028",
+                        "United States"
+                    ]
+                },
+                "categories": [
+                    {
+                        "id": "4bf58dd8d48988d163941735",
+                        "name": "Park",
+                        "pluralName": "Parks",
+                        "shortName": "Park",
+                        "icon": {
+                            "prefix": "https://ss3.4sqi.net/img/categories_v2/parks_outdoors/park_",
+                            "suffix": ".png"
+                        },
+                        "primary": true
+                    }
+                ],
+                "referralId": "v-1539445532",
+                "hasPerk": false
+            },
+            {
+                "id": "3fd66200f964a520def11ee3",
+                "name": "Union Square Park",
+                "location": {
+                    "address": "btwn Broadway & Union Sq E",
+                    "crossStreet": "btwn E 14th & E 17th St",
+                    "lat": 40.7353111110753,
+                    "lng": -73.99065019420007,
+                    "distance": 1729,
+                    "postalCode": "10003",
+                    "cc": "US",
+                    "city": "New York",
+                    "state": "NY",
+                    "country": "United States",
+                    "formattedAddress": [
+                        "btwn Broadway & Union Sq E (btwn E 14th & E 17th St)",
+                        "New York, NY 10003",
+                        "United States"
+                    ]
+                },
+                "categories": [
+                    {
+                        "id": "4bf58dd8d48988d163941735",
+                        "name": "Park",
+                        "pluralName": "Parks",
+                        "shortName": "Park",
+                        "icon": {
+                            "prefix": "https://ss3.4sqi.net/img/categories_v2/parks_outdoors/park_",
+                            "suffix": ".png"
+                        },
+                        "primary": true
+                    }
+                ],
+                "referralId": "v-1539445532",
+                "hasPerk": false
+            },
+            {
+                "id": "42893400f964a52052231fe3",
+                "name": "Prospect Park",
+                "location": {
+                    "address": "Prospect Park",
+                    "lat": 40.66197082538004,
+                    "lng": -73.97122621536255,
+                    "labeledLatLngs": [
+                        {
+                            "label": "display",
+                            "lat": 40.66197082538004,
+                            "lng": -73.97122621536255
+                        }
+                    ],
+                    "distance": 10001,
+                    "postalCode": "11215",
+                    "cc": "US",
+                    "city": "Brooklyn",
+                    "state": "NY",
+                    "country": "United States",
+                    "formattedAddress": [
+                        "Prospect Park",
+                        "Brooklyn, NY 11215",
+                        "United States"
+                    ]
+                },
+                "categories": [
+                    {
+                        "id": "4bf58dd8d48988d163941735",
+                        "name": "Park",
+                        "pluralName": "Parks",
+                        "shortName": "Park",
+                        "icon": {
+                            "prefix": "https://ss3.4sqi.net/img/categories_v2/parks_outdoors/park_",
+                            "suffix": ".png"
+                        },
+                        "primary": true
+                    }
+                ],
+                "referralId": "v-1539445532",
+                "hasPerk": false
+            },
+            {
+                "id": "40f1d480f964a5206a0a1fe3",
+                "name": "High Line",
+                "location": {
+                    "address": "btwn Gansevoort & W 34th St",
+                    "crossStreet": "btwn 10th & 12th Ave",
+                    "lat": 40.746825,
+                    "lng": -74.005507,
+                    "labeledLatLngs": [
+                        {
+                            "label": "display",
+                            "lat": 40.746825,
+                            "lng": -74.005507
+                        }
+                    ],
+                    "distance": 1460,
+                    "postalCode": "10011",
+                    "cc": "US",
+                    "city": "New York",
+                    "state": "NY",
+                    "country": "United States",
+                    "formattedAddress": [
+                        "btwn Gansevoort & W 34th St (btwn 10th & 12th Ave)",
+                        "New York, NY 10011",
+                        "United States"
+                    ]
+                },
+                "categories": [
+                    {
+                        "id": "4bf58dd8d48988d163941735",
+                        "name": "Park",
+                        "pluralName": "Parks",
+                        "shortName": "Park",
+                        "icon": {
+                            "prefix": "https://ss3.4sqi.net/img/categories_v2/parks_outdoors/park_",
+                            "suffix": ".png"
+                        },
+                        "primary": true
+                    }
+                ],
+                "referralId": "v-1539445532",
+                "hasPerk": false
+            },
+            {
+                "id": "3fd66200f964a520d7f11ee3",
+                "name": "Bryant Park",
+                "location": {
+                    "address": "E 42nd St",
+                    "crossStreet": "btwn 5th & 6th Ave",
+                    "lat": 40.75395491241381,
+                    "lng": -73.98398145637879,
+                    "distance": 549,
+                    "postalCode": "10018",
+                    "cc": "US",
+                    "neighborhood": "Midtown",
+                    "city": "New York",
+                    "state": "NY",
+                    "country": "United States",
+                    "formattedAddress": [
+                        "E 42nd St (btwn 5th & 6th Ave)",
+                        "New York, NY 10018",
+                        "United States"
+                    ]
+                },
+                "categories": [
+                    {
+                        "id": "4bf58dd8d48988d163941735",
+                        "name": "Park",
+                        "pluralName": "Parks",
+                        "shortName": "Park",
+                        "icon": {
+                            "prefix": "https://ss3.4sqi.net/img/categories_v2/parks_outdoors/park_",
+                            "suffix": ".png"
+                        },
+                        "primary": true
+                    }
+                ],
+                "delivery": {
+                    "id": "298339",
+                    "url": "https://www.seamless.com/menu/calle-dao-bryant-park-38-w-39th-st-new-york/298339?affiliate=1131&utm_source=foursquare-affiliate-network&utm_medium=affiliate&utm_campaign=1131&utm_content=298339",
+                    "provider": {
+                        "name": "seamless",
+                        "icon": {
+                            "prefix": "https://igx.4sqi.net/img/general/cap/",
+                            "sizes": [
+                                40,
+                                50
+                            ],
+                            "name": "/delivery_provider_seamless_20180129.png"
+                        }
+                    }
+                },
+                "referralId": "v-1539445532",
+                "hasPerk": false
+            },
+            {
+                "id": "40b68100f964a5207d001fe3",
+                "name": "Madison Square Park",
+                "location": {
+                    "address": "Madison Ave",
+                    "crossStreet": "btwn E 23rd & E 26th St",
+                    "lat": 40.74226204193276,
+                    "lng": -73.98800611495972,
+                    "labeledLatLngs": [
+                        {
+                            "label": "display",
+                            "lat": 40.74226204193276,
+                            "lng": -73.98800611495972
+                        }
+                    ],
+                    "distance": 954,
+                    "postalCode": "10010",
+                    "cc": "US",
+                    "city": "New York",
+                    "state": "NY",
+                    "country": "United States",
+                    "formattedAddress": [
+                        "Madison Ave (btwn E 23rd & E 26th St)",
+                        "New York, NY 10010",
+                        "United States"
+                    ]
+                },
+                "categories": [
+                    {
+                        "id": "4bf58dd8d48988d163941735",
+                        "name": "Park",
+                        "pluralName": "Parks",
+                        "shortName": "Park",
+                        "icon": {
+                            "prefix": "https://ss3.4sqi.net/img/categories_v2/parks_outdoors/park_",
+                            "suffix": ".png"
+                        },
+                        "primary": true
+                    }
+                ],
+                "referralId": "v-1539445532",
+                "hasPerk": false
+            },
+            {
+                "id": "42daf100f964a52035261fe3",
+                "name": "Battery Park",
+                "location": {
+                    "address": "Battery Pl",
+                    "crossStreet": "at State St",
+                    "lat": 40.70355938545053,
+                    "lng": -74.01537185491507,
+                    "distance": 5710,
+                    "postalCode": "10004",
+                    "cc": "US",
+                    "city": "New York",
+                    "state": "NY",
+                    "country": "United States",
+                    "formattedAddress": [
+                        "Battery Pl (at State St)",
+                        "New York, NY 10004",
+                        "United States"
+                    ]
+                },
+                "categories": [
+                    {
+                        "id": "4bf58dd8d48988d163941735",
+                        "name": "Park",
+                        "pluralName": "Parks",
+                        "shortName": "Park",
+                        "icon": {
+                            "prefix": "https://ss3.4sqi.net/img/categories_v2/parks_outdoors/park_",
+                            "suffix": ".png"
+                        },
+                        "primary": true
+                    }
+                ],
+                "referralId": "v-1539445532",
+                "hasPerk": false
+            },
+            {
+                "id": "40abf500f964a52035f31ee3",
+                "name": "Washington Square Park",
+                "location": {
+                    "address": "W 4th St",
+                    "crossStreet": "btwn MacDougal St & University Pl",
+                    "lat": 40.73081579656163,
+                    "lng": -73.9974582195282,
+                    "labeledLatLngs": [
+                        {
+                            "label": "display",
+                            "lat": 40.73081579656163,
+                            "lng": -73.9974582195282
+                        }
+                    ],
+                    "distance": 2336,
+                    "postalCode": "10012",
+                    "cc": "US",
+                    "city": "New York",
+                    "state": "NY",
+                    "country": "United States",
+                    "formattedAddress": [
+                        "W 4th St (btwn MacDougal St & University Pl)",
+                        "New York, NY 10012",
+                        "United States"
+                    ]
+                },
+                "categories": [
+                    {
+                        "id": "4bf58dd8d48988d163941735",
+                        "name": "Park",
+                        "pluralName": "Parks",
+                        "shortName": "Park",
+                        "icon": {
+                            "prefix": "https://ss3.4sqi.net/img/categories_v2/parks_outdoors/park_",
+                            "suffix": ".png"
+                        },
+                        "primary": true
+                    }
+                ],
+                "referralId": "v-1539445532",
+                "hasPerk": false
+            },
+            {
+                "id": "430d0a00f964a5203e271fe3",
+                "name": "Brooklyn Bridge Park",
+                "location": {
+                    "address": "Main St",
+                    "crossStreet": "Plymouth St",
+                    "lat": 40.702282,
+                    "lng": -73.996456,
+                    "labeledLatLngs": [
+                        {
+                            "label": "display",
+                            "lat": 40.702282,
+                            "lng": -73.996456
+                        }
+                    ],
+                    "distance": 5437,
+                    "postalCode": "11201",
+                    "cc": "US",
+                    "neighborhood": "DUMBO, Brooklyn, NY",
+                    "city": "Brooklyn",
+                    "state": "NY",
+                    "country": "United States",
+                    "formattedAddress": [
+                        "Main St (Plymouth St)",
+                        "Brooklyn, NY 11201",
+                        "United States"
+                    ]
+                },
+                "categories": [
+                    {
+                        "id": "4bf58dd8d48988d163941735",
+                        "name": "Park",
+                        "pluralName": "Parks",
+                        "shortName": "Park",
+                        "icon": {
+                            "prefix": "https://ss3.4sqi.net/img/categories_v2/parks_outdoors/park_",
+                            "suffix": ".png"
+                        },
+                        "primary": true
+                    }
+                ],
+                "referralId": "v-1539445532",
+                "hasPerk": false
+            }
+        ],
+        "confident": true
+    }
+}
