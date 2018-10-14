@@ -12,6 +12,10 @@ class App extends Component {
     };
   }
 
+  componentWillMount() {
+    this.parseData();
+  }
+
   // TODO: find better place in order to avoid costly rerendering of app
   componentDidMount() {
     // var date = dateToday(),
@@ -51,7 +55,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <GoogleMap locations={this.state.markers}/>
+        <GoogleMap markers={this.state.markers}/>
       </div>
     );
   }
@@ -61,14 +65,14 @@ export default App;
 
 
 // function which returns date string in YYYYMMDD format which is required for the Forsquare API
-// function dateToday() {
-//   var dateTemp = new Date();
-//   var dateToday = '';
-//   // Credits given to user113716 on Stackoverflow for getting two digit month and day number
-//   // https://stackoverflow.com/a/3605248
-//   dateToday = dateToday.concat(dateTemp.getFullYear(), 
-//                               ('0' + (dateTemp.getMonth() + 1)).slice(-2), 
-//                               ('0' + dateTemp.getDate()).slice(-2));
-//   return dateToday;
-// }
+function dateToday() {
+  var dateTemp = new Date();
+  var dateToday = '';
+  // Credits given to user113716 on Stackoverflow for getting two digit month and day number
+  // https://stackoverflow.com/a/3605248
+  dateToday = dateToday.concat(dateTemp.getFullYear(), 
+                              ('0' + (dateTemp.getMonth() + 1)).slice(-2), 
+                              ('0' + dateTemp.getDate()).slice(-2));
+  return dateToday;
+}
 
