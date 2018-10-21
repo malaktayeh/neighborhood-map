@@ -13,7 +13,7 @@ class App extends Component {
       // markers is an object of all the markers
       markers: {},
       // object with one marker which gets updated from chil components
-      selectedMarker: ''
+      selectedMarker: null
     };
   }
 
@@ -24,8 +24,8 @@ class App extends Component {
   // TODO: find better place in order to avoid costly rerendering of app
   componentDidMount() {
     // var date = dateToday(),
-    //     clientID = 'YCYZUTP251E4PE1YMCXMQAAQLQDSQ3R5AB42WBHYADT2DXAC',
-    //     clientSecret = 'PCWDZDIZJQNJBYIMWNVNPM3OQILTKEZNDE1E5HA3VCFNG0RA';
+    //     clientID = provess.env.REACT_APP_FOURSQUARE_API_CLIENT_KEY,
+    //     clientSecret = provess.env.REACT_APP_FOURSQUARE_API_CLIENT_SECRET_KEY;
     //     categoriyId = 'categoryId=4bf58dd8d48988d163941735';
 
     // // fetches park around NYC area, returns ten results max
@@ -63,9 +63,8 @@ class App extends Component {
 
   // handles state for selectedMarker from Sidebar
   handleMarkerClick = (num) => {
-    var selectedMarker = this.state.markers;
-    var temp = Object.values(selectedMarker)[num];
-    this.setState({ selectedMarker: temp});
+    // var temp = this.state.markers[num];
+    this.setState({ selectedMarker: num });
   }
 
   render() {
