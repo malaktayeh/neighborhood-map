@@ -94,10 +94,13 @@ class MyMap extends React.PureComponent {
     if (this.props.selectedMarker !== prevProps.selectedMarker) {
       this.setState({ marker: this.props.selectedMarker })
     }
+    if (this.props.markers !== prevProps.markers) {
+      this.setState({ markers: this.props.markers })
+    }
   }
 
   // changes selected marker in current and parent state
-  changeSelectedMarker = (markerNum) => {
+  _changeSelectedMarker = (markerNum) => {
     // changes state locally
     this.setState({ marker: markerNum });
     // changes state in parent component
