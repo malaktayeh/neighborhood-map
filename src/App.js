@@ -3,6 +3,7 @@ import './App.css';
 import GoogleMap from './components/GoogleMap.js';
 import SideBar from './components/Sidebar.js';
 import data from './data/park_data.json';
+import escapeRegExp from 'escape-string-regexp';
 
 class App extends Component {
   constructor() {
@@ -12,6 +13,7 @@ class App extends Component {
       foursquareResult: data,
       // markers is an object of all the markers
       markers: {},
+      filteredMarkers: {},
       // object with one marker which gets updated from chil components
       selectedMarker: null,
       date: ''
@@ -19,12 +21,12 @@ class App extends Component {
   }
 
   componentWillMount() {
-    this.getTodaysDate();
-    this.parseData();
+    this._getTodaysDate();
+    this._parseData();
   }
 
   // function which returns date string in YYYYMMDD format which is required for the Forsquare API
-  getTodaysDate = () => {
+  _getTodaysDate = () => {
     var dateTemp = new Date();
     var dateToday = '';
     // Credits given to user113716 on Stackoverflow for getting two digit month and day number
@@ -35,10 +37,8 @@ class App extends Component {
     this.setState({ date: dateToday })
   }
 
-
   getData = (searchString) => {
-    var result = '',
-        clientID = process.env.REACT_APP_FOURSQUARE_API_CLIENT_KEY,
+      var clientID = process.env.REACT_APP_FOURSQUARE_API_CLIENT_KEY,
         clientSecret = process.env.REACT_APP_FOURSQUARE_API_CLIENT_SECRET_KEY;
 
     // fetches park around NYC area, returns ten results max
@@ -46,14 +46,14 @@ class App extends Component {
       +'&client_secret=' + clientSecret + '&query=' + searchString + '&v=' + this.state.date)
     // returns response in JSON format
     .then(res => res.json())
-    .catch(error => console.log('Error!'))
+    .catch(error => console.log('Error message: ' + error))
     // saves search result in state
     .then(foursquareResult => this.setState({ foursquareResult }))
     // parses new data
-    .then(() => this.parseData())
+    .then(() => this._parseData())
   }
 
-  parseData = () => {
+  _parseData = () => {
   const foursquareData = this.state.foursquareResult, 
         venues = this.state.foursquareResult.response.venues,
         markerObj = {};
@@ -76,6 +76,7 @@ class App extends Component {
       }
     }
     this.setState({ markers: markerObj});
+    this.setState({ filteredMarkers: markerObj });
   }
 
   // handles state for selectedMarker from Sidebar
@@ -83,17 +84,40 @@ class App extends Component {
     this.setState({ selectedMarker: num });
   }
 
+  // filters markers
+  filterResults = (matchString) => {
+    let filteredMarkers = {};
+    let count = 0;
+
+    // loop through markers and check if any of the markers has a matching location name
+    Object.entries(this.state.markers).map(function (obj, index) {
+
+      // save title in temp
+      let temp = obj[1].title;
+      let match = new RegExp(escapeRegExp(matchString), 'i');
+
+      // if match has been found, add marker info into the filtered marker object 'filteredMarkers'
+      if (match.test(temp)) {
+        filteredMarkers[count] = obj[1];
+        count++;
+      }
+    })
+
+    this.setState({ filteredMarkers })
+  }
+
   render() {
     return (
       <div className="App">
         <SideBar 
-          markers={this.state.markers} 
+          markers={this.state.filteredMarkers} 
           selectedMarker={this.state.selectedMarker}
           handleMarkerClick={this.handleMarkerClick}
           getData={this.getData}
+          filterData={this.filterResults}
         />
         <GoogleMap 
-          markers={this.state.markers} 
+          markers={this.state.filteredMarkers} 
           selectedMarker={this.state.selectedMarker} 
           handleMarkerClick={this.handleMarkerClick}
         />

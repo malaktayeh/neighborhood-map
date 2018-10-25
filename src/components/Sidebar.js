@@ -1,25 +1,14 @@
 import React from "react";
 import './../App.css';
-// import escapeRegExp from 'escape-string-regexp';
-// import { DebounceInput } from 'react-debounce-input';
 
 class SideBar extends React.PureComponent {
     constructor(props) {
         super(props);
         this.state = {
-            query: ''
+            query: '',
+            filterQuery: ''
         };
     }
-
-    // filterResults() {
-    //     const match = new RegExp(escapeRegExp(this.state.query), 'i');
-    //     // match query with book title or book author
-    //     this.setState((state) => {
-    //         this.state.books.filter((book) =>
-    //             match.test(book.title) || match.test(book.authors)
-    //         )
-    //     })
-    // }
 
     render() {
         return (
@@ -34,13 +23,14 @@ class SideBar extends React.PureComponent {
                             <button onClick={() => this.props.getData(this.state.query)}>Search</button>
                         </form>
                         <hr/>
-                        <div id="filter-list">
+                        <form id="filter-list">
                             <input
                                 type="text"
-                                placeholder="Enter new search here"
+                                placeholder="Filter results"
+                                onChange={(event) => { this.setState({ filterQuery: event.target.value }) }}
                             />
-                            <button>Filter</button>
-                        </div>
+                        <button onClick={() => this.props.filterData(this.state.filterQuery)}>Filter</button>
+                        </form>
                         <hr />
                         <div id="locations-list">
                             <h3>Search results</h3>

@@ -114,7 +114,7 @@ class MyMap extends React.PureComponent {
           markers={this.state.markers}
           marker={this.state.marker}
           showMarkers={this.state.showMarkers} 
-          changeSelectedMarker={this.changeSelectedMarker}
+          changeSelectedMarker={this._changeSelectedMarker}
         />
       </div>
     )
