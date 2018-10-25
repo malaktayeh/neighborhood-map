@@ -27,7 +27,7 @@ class SideBar extends React.PureComponent {
                             <input
                                 type="text"
                                 placeholder="Filter results"
-                                onChange={(event) => { this.setState({ filterQuery: event.target.value }) }}
+                                onChange={event => { this.setState({ filterQuery: event.target.value }) }}
                             />
                         <button onClick={() => this.props.filterData(this.state.filterQuery)}>Filter</button>
                         </form>

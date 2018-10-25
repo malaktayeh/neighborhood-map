@@ -1,93 +1,43 @@
-/* html, body, div, span, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-abbr, address, cite, code,
-del, dfn, em, img, ins, kbd, q, samp,
-small, strong, sub, sup, var,
-b, i,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section, summary,
-time, mark, audio, video {
-    margin:0;
-    padding:0;
-    border:0;
-    outline:0;
-    font-size:100%;
-    vertical-align:baseline;
-    background:transparent;
-}
-
-body {
-    line-height:1;
-}
-
-article,aside,details,figcaption,figure,
-footer,header,hgroup,menu,nav,section { 
-    display:block;
-}
-
-nav ul {
-    list-style:none;
-}
-
-blockquote, q {
-    quotes:none;
-}
-
-blockquote:before, blockquote:after,
-q:before, q:after {
-    content:'';
-    content:none;
-}
-
-a {
-    margin:0;
-    padding:0;
-    font-size:100%;
-    vertical-align:baseline;
-    background:transparent;
-}
-
-
-ins {
-    background-color:#ff9;
-    color:#000;
-    text-decoration:none;
-}
-
-
-mark {
-    background-color:#ff9;
-    color:#000; 
-    font-style:italic;
-    font-weight:bold;
-}
-
-del {
-    text-decoration: line-through;
-}
-
-abbr[title], dfn[title] {
-    border-bottom:1px dotted;
-    cursor:help;
-}
-
-table {
-    border-collapse:collapse;
-    border-spacing:0;
-}
-
-input, select {
-    vertical-align:middle;
-}
-  */
-
-
 .App {
   display: flex;
   flex-direction: row;
+}
+
+.hamburger-button {
+  position: fixed;
+  cursor: pointer;
+  margin: 10px;
+  padding: 9px 11px;
+  background-color: white;
+  z-index: 9999999999999;
+  left: 270px;
+  border-radius: 7%;
+  box-shadow: 0px 3px 15px rgba(0,0,0,0.1);
+}
+
+.hamburger-button-alone {
+  position: fixed;
+  cursor: pointer;
+  margin: 10px;
+  padding: 9px 11px;
+  background-color: white;
+  z-index: 9999999999999;
+  border-radius: 7%;
+  box-shadow: 0px 3px 15px rgba(0,0,0,0.1);
+}
+
+.hamburger-button * {
+  width: 20px;
+  height: 2px;
+  background-color: #666;
+  margin: 4px 0;
+}
+
+.hamburger-button-alone * {
+  width: 20px;
+  height: 2px;
+  background-color: #666;
+  margin: 4px 0;
 }
 
 #map {
@@ -96,13 +46,15 @@ input, select {
 }
 
 #sidebar {
-  min-width: 300px;
+  min-width: 270px;
+  max-width: 250px;
   height: 100vh;
+  overflow: auto;
 }
 
 #input-form {
-  padding-top: 20px;
-  padding-left: 35px;
+  padding-top: 10px;
+  padding-left: 15px;
 }
 
 #input-form *, #filter-list * {
@@ -110,11 +62,11 @@ input, select {
 }
 
 #filter-list {
-  padding: 20px 0 0 35px;
+  padding: 20px 0 0 15px;
 }
 
 #locations-list {
-  padding: 0 0 0 35px;
+  padding: 0 0 0 15px;
   margin: 0 35px 0 0;
 }
 
@@ -153,9 +105,51 @@ li {
   background-color: rgb(200, 200, 200);
 }
 
- 
-/* @media screen and (min-width: 1024px) {
-    #map {
-        height: 800px;
+@media screen and (orientation: landscape) {
+  #sidebar {
+    max-width: 300px;
+  }
+}
+
+@media screen and (min-width: 400px) {
+  .hamburger-button {
+    left: 300px;
+  }
+
+  #input-form {
+    padding-top: 20px;
+    padding-left: 35px;
+  }
+  
+  #sidebar {
+    min-width: 300px;
+    max-width: 350px;
+    height: 100vh;
+    overflow: auto;
+  }
+
+  #input-form {
+    padding: 20px 0 0 25px;
+  }
+
+  #filter-list {
+    padding: 20px 0 0 25px;
+  }
+
+  #locations-list {
+    padding: 0 0 0 25px;
+    margin: 0 20px 0 0;
+  }
+}
+
+@media screen and (min-height: 900px) and (orientation: portrait) {
+    .hamburger-button {
+      display: none;
     }
-} */
+}
+
+@media screen and (min-width: 900px) and (orientation: landscape) {
+    .hamburger-button  {
+      display: none;
+    }
+}

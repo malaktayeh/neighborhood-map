@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import GoogleMap from './components/GoogleMap.js';
 import SideBar from './components/Sidebar.js';
+import MenuButton from './components/MenuButton.js';
 import data from './data/park_data.json';
 import escapeRegExp from 'escape-string-regexp';
 
@@ -16,7 +17,8 @@ class App extends Component {
       filteredMarkers: {},
       // object with one marker which gets updated from chil components
       selectedMarker: null,
-      date: ''
+      date: '',
+      showSidebar: true
     };
   }
 
@@ -82,6 +84,13 @@ class App extends Component {
   // handles state for selectedMarker from Sidebar
   handleMarkerClick = (num) => {
     this.setState({ selectedMarker: num });
+    
+  }
+
+  handleSideBarToggle = () => {
+    this.setState((state) => {
+      return {showSidebar: !state.showSidebar};
+    })
   }
 
   // filters markers
@@ -101,20 +110,27 @@ class App extends Component {
         filteredMarkers[count] = obj[1];
         count++;
       }
+      // to avoid warning in console of using map to loop over markers we are returning null
+      return null;
     })
-
     this.setState({ filteredMarkers })
   }
 
   render() {
     return (
       <div className="App">
+      {this.state.showSidebar && 
         <SideBar 
           markers={this.state.filteredMarkers} 
           selectedMarker={this.state.selectedMarker}
           handleMarkerClick={this.handleMarkerClick}
           getData={this.getData}
           filterData={this.filterResults}
+        />
+        }
+        <MenuButton
+          handleSideBarToggle={this.handleSideBarToggle}
+          showSidebar={this.state.showSidebar}
         />
         <GoogleMap 
           markers={this.state.filteredMarkers} 
