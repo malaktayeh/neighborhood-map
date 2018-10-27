@@ -3,7 +3,7 @@ import './../App.css';
 
 const MenuButton = ( props) => {
         return (
-            <div title="Toggle Sidebar" 
+            <div title="Toggle Sidebar" role="button" aria-label="Toggle Menu"
                  className={(props.showSidebar ? 'hamburger-button' : 'hamburger-button-alone')}
                  type="button" 
                  onClick={() => props.handleSideBarToggle()}

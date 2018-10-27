@@ -16,6 +16,8 @@ class SideBar extends React.PureComponent {
                     <div>
                         <form id="input-form">
                             <input
+                                aria-label={'Search Box'}
+                                aria-required="true"
                                 type="text"
                                 placeholder="Enter new search here"
                                 onChange={(event) => { this.setState({ query: event.target.value }) }}

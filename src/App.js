@@ -44,7 +44,7 @@ class App extends Component {
         clientSecret = process.env.REACT_APP_FOURSQUARE_API_CLIENT_SECRET_KEY;
 
     // fetches park around NYC area, returns ten results max
-    fetch('https://api.foursquare.com/v2/venues/search?ll=40.7508,-73.9890&limit=10&client_id='+ clientID 
+    fetch('https://api.foursquare.com/v2/venues/search?ll=40.7508,-73.9890&limit=20&client_id='+ clientID 
       +'&client_secret=' + clientSecret + '&query=' + searchString + '&v=' + this.state.date)
     // returns response in JSON format
     .then(res => res.json())

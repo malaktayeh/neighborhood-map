@@ -22,7 +22,7 @@ const MapWithAMarkerClusterer = compose(
         isOpen: markerKey !== key || !isOpen,
         markerKey: key
       }),
-      display: ({ isOpen, markerKey }) => (key) => ({
+      display: ({ }) => (key) => ({
         isOpen: true,
         markerKey: key,
       })
@@ -50,21 +50,21 @@ const MapWithAMarkerClusterer = compose(
                   props.changeSelectedMarker(key);
                 }}
                 key={key} 
-                animation={key === props.markerKey && google.maps.Animation.DROP || null}
+                animation={ (key === props.markerKey) && google.maps.Animation.DROP || null }
         >
 
-          {/* gets called if one of the list items in Searchbar gets clicked  */}
-          {(props.marker !== props.markerKey) && props.display(props.marker)}
+          { /* gets called if one of the list items in Searchbar gets clicked  */ }
+          { (props.marker !== props.markerKey) && props.display(props.marker) }
 
-          {/* Display InfoBox */}
-          {(props.isOpen && props.markerKey === key) && <InfoWindow
+          { /* Display InfoBox */ }
+          { (props.isOpen && props.markerKey === key) && <InfoWindow
             onCloseClick={props.onToggleOpen}
             options={{ closeBoxURL: ``, enableEventPropagation: true }}
             >
               <div style={{ fontSize: `14px`, fontColor: `blue`, padding: `0`, margin: `0` }}>
-                <p style={{ fontWeight: `bold`, fontSize: `1.05rem`, margin: `1px`}}>{value.title}</p>
-                <p style={{ margin: `1px`}}>{value.address}</p>
-                <p style={{ margin: `1px` }}>{value.city}, {value.state} {value.zip}</p>
+                <p style={{ fontWeight: `bold`, fontSize: `1.05rem`, margin: `1px`}} >{ value.title } </p>
+                <p style={{ margin: `1px` }}>{ value.address }</p>
+                <p style={{ margin: `1px` }}>{ value.city }, { value.state } { value.zip }</p>
               </div>
           </InfoWindow>}
           
@@ -111,9 +111,9 @@ class MyMap extends React.PureComponent {
 
   render() {
     return (
-      <div id="map">
+      <div id="map" role="region" aria-label="New York City Map" title="map">
         <MapWithAMarkerClusterer
-          markers={this.state.markers}
+          markers={this.state.markers }
           marker={this.state.marker}
           showMarkers={this.state.showMarkers} 
           changeSelectedMarker={this._changeSelectedMarker}
