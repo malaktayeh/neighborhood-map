@@ -3,7 +3,6 @@ import React from "react";
 import './../App.css';
 const { compose, withProps, withStateHandlers } = require("recompose");
 const { withScriptjs, withGoogleMap, GoogleMap, Marker, InfoWindow } = require("react-google-maps");
-// const { InfoBox } = require("react-google-maps/lib/components/addons/InfoBox");
 const { MarkerClusterer } = require("react-google-maps/lib/components/addons/MarkerClusterer");
 
 const MapWithAMarkerClusterer = compose(
@@ -16,15 +15,16 @@ const MapWithAMarkerClusterer = compose(
   }),
   withStateHandlers(() => ({
     isOpen: false,
-    markerKey: null
+    markerKey: null,
+    animation: null
   }), {
       displayInfo: ({ isOpen, markerKey }) => (key) => ({
         isOpen: markerKey !== key || !isOpen,
         markerKey: key
       }),
       display: ({ isOpen, markerKey }) => (key) => ({
-        isOpen: !isOpen,
-        markerKey: key
+        isOpen: true,
+        markerKey: key,
       })
     }),
   withScriptjs,
@@ -45,11 +45,13 @@ const MapWithAMarkerClusterer = compose(
       {/* Loop through markers once component did mount*/}
       {props.showMarkers && Object.entries(props.markers).map(([key, value]) =>
         <Marker position={{ lat: value.location.lat, lng: value.location.lng }} 
-                key={ key } 
-                onClick={() => {
+                onClick={(e) => {
                   props.displayInfo(key);
                   props.changeSelectedMarker(key);
-        }}>
+                }}
+                key={key} 
+                animation={key === props.markerKey && google.maps.Animation.DROP || null}
+        >
 
           {/* gets called if one of the list items in Searchbar gets clicked  */}
           {(props.marker !== props.markerKey) && props.display(props.marker)}
