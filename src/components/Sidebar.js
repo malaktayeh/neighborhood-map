@@ -14,7 +14,7 @@ class SideBar extends React.PureComponent {
         return (
                 <div id="sidebar">
                     <div>
-                        <form id="input-form">
+                        <form id="input-form" role="form" aria-label="search">
                             <input
                                 aria-label={'Search Box'}
                                 aria-required="true"
@@ -22,16 +22,16 @@ class SideBar extends React.PureComponent {
                                 placeholder="Enter new search here"
                                 onChange={(event) => { this.setState({ query: event.target.value }) }}
                             />
-                            <button onClick={() => this.props.getData(this.state.query)}>Search</button>
+                            <button role="button" aria-label="Search" onClick={() => this.props.getData(this.state.query)}>Search</button>
                         </form>
                         <hr/>
-                        <form id="filter-list">
+                        <form id="filter-list" role="form" aria-label="filter">
                             <input
                                 type="text"
                                 placeholder="Filter results"
                                 onChange={event => { this.setState({ filterQuery: event.target.value }) }}
                             />
-                        <button onClick={() => this.props.filterData(this.state.filterQuery)}>Filter</button>
+                        <button role="button" aria-label="Filter" onClick={() => this.props.filterData(this.state.filterQuery)}>Filter</button>
                         </form>
                         <hr />
                         <div id="locations-list">
