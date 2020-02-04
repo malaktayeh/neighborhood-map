@@ -22,7 +22,7 @@ const MapWithAMarkerClusterer = compose(
         isOpen: markerKey !== key || !isOpen,
         markerKey: key
       }),
-      display: ({ }) => (key) => ({
+      display: () => (key) => ({
         isOpen: true,
         markerKey: key,
       })
@@ -50,7 +50,7 @@ const MapWithAMarkerClusterer = compose(
                   props.changeSelectedMarker(key);
                 }}
                 key={key} 
-                animation={ (key === props.markerKey) && google.maps.Animation.DROP || null }
+                animation={ ((key === props.markerKey) && google.maps.Animation.DROP) || null }
         >
 
           { /* gets called if one of the list items in Searchbar gets clicked  */ }
