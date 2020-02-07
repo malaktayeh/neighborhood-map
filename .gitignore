@@ -1,0 +1,4 @@
+# do not push parcel cache folder
+/.parcel-cache/
+
+.env*
