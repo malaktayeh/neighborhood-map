@@ -1,11 +1,15 @@
 {
   "name": "neighborhood-map",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "main": "index.js",
   "repository": "https://github.com/electrovagance/neighborhood-map.git",
   "author": "Malak Tayeh <malaktayeh@outlook.com>",
   "license": "MIT",
   "devDependencies": {
     "parcel": "^2.0.0-alpha.3.2"
+  },
+  "dependencies": {
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
   }
 }
