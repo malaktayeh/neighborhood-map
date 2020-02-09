@@ -1,7 +1,7 @@
 {
   "name": "neighborhood-map",
   "version": "2.0.0",
-  "main": "index.js",
+  "main": "app.js",
   "repository": "https://github.com/electrovagance/neighborhood-map.git",
   "author": "Malak Tayeh <malaktayeh@outlook.com>",
   "license": "MIT",

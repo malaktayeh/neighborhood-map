@@ -1,21 +1,24 @@
 import ReactDom from 'react-dom';
 import React from 'react';
-import Map from './components/GoogleMap'
+import Map from './components/Map';
+import Sidebar from './components/Sidebar'
+import './app.css'
 
 function App() {
   return (
     <div id="main">
+      <Sidebar />
       <Map
         id="myMap"
         options={{
-          center: { lat: 41.0082, lng: 28.9784 },
-          zoom: 8
+          center: { lat: 40.7413549, lng: -73.9980244 },
+          zoom: 13
         }}
         onMapLoad={map => {
           var marker = new window.google.maps.Marker({
-            position: { lat: 41.0082, lng: 28.9784 },
+            position: { lat: 40.7413549, lng: -73.9980244 },
             map: map,
-            title: 'Hello Istanbul!'
+            title: 'Chelsea'
           });
         }}
       />
