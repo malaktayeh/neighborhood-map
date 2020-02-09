@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
+import './sidebar.css';
 
-function Sidebar() {
+const Sidebar = ({ getData }) => {
     const [queryString, setQueryString] = useState("");
 
     return(
@@ -13,6 +14,7 @@ function Sidebar() {
                     placeholder="Enter new search here"
                     onChange={(event) => { setQueryString(event.target.value) }}
                 />
+            <button role="button" aria-label="Search" onClick={() => getData(queryString)}>Search</button>
             </form>
         </div>
     )
