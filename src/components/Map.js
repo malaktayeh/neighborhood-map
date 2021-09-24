@@ -1,5 +1,6 @@
 import React from 'react';
 import GoogleMapReact from 'google-map-react';
+import { Marker } from './Marker';
 
 const SimpleMap = ({id , options, onMapLoad, markers, handleMarkerClick, selectedMarker }) => {
 
@@ -13,11 +14,11 @@ const SimpleMap = ({id , options, onMapLoad, markers, handleMarkerClick, selecte
         defaultCenter={options.center}
         defaultZoom={options.zoom}
       >
-        {/* <AnyReactComponent
+        <Marker
           lat={options.center.lat}
           lng={options.center.lng}
           text="My Marker"
-        /> */}
+        />
       </GoogleMapReact>
     </div>
   );
