@@ -16,9 +16,9 @@
   },
   "dependencies": {
     "escape-string-regexp": "^5.0.0",
+    "google-map-react": "^2.1.10",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "react-google-maps": "^9.4.5",
     "react-scripts": "^4.0.3",
     "yelp-fusion": "^3.0.0"
   },

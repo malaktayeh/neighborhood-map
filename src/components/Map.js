@@ -1,37 +1,26 @@
-import React, { useEffect } from 'react';
+import React from 'react';
+import GoogleMapReact from 'google-map-react';
 
-const Map = (props) => {
-
-  const onScriptLoad = ()  => {
-    const map = new window.google.maps.Map(
-      document.getElementById(props.id),
-      props.options
-    );
-
-    props.onMapLoad(map)
-  }
-
-  useEffect(() => {
-    if (!window.google) {
-      var script = document.createElement('script');
-      script.type = 'text/javascript';
-      script.src = 'https://maps.google.com/maps/api/js?key=' + process.env.GOOGLE_MAPS_API_KEY;
-      var headScript = document.getElementsByTagName('script')[0];
-      headScript.parentNode.insertBefore(script, headScript);
-      
-      script.addEventListener('load', e => {
-        onScriptLoad()
-      })
-    } else {
-      onScriptLoad()
-    }
-  });
+const SimpleMap = ({id , options, onMapLoad, markers, handleMarkerClick, selectedMarker }) => {
 
   return (
-    <div id={props.id} />
-  )
-  
-  
+    <div
+      id={id} 
+      style={{ height: '100vh', width: '100%' }}
+      >
+      <GoogleMapReact
+        bootstrapURLKeys={{ key: process.env.GOOGLE_MAPS_API_KEY }}
+        defaultCenter={options.center}
+        defaultZoom={options.zoom}
+      >
+        {/* <AnyReactComponent
+          lat={options.center.lat}
+          lng={options.center.lng}
+          text="My Marker"
+        /> */}
+      </GoogleMapReact>
+    </div>
+  );
 }
 
-export default Map;
+export default SimpleMap;

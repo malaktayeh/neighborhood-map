@@ -124,13 +124,13 @@ function App() {
           center: { lat: 40.7413549, lng: -73.9980244 },
           zoom: 13
         }}
-        // onMapLoad={map => {
-        //   var marker = new window.google.maps.Marker({
-        //     position: { lat: 40.7413549, lng: -73.9980244 },
-        //     map: map,
-        //     title: 'Chelsea'
-        //   });
-        // }}
+        onMapLoad={map => {
+          var marker = new window.google.maps.Marker({
+            position: { lat: 40.7413549, lng: -73.9980244 },
+            map: map,
+            title: 'Chelsea'
+          });
+        }}
         markers={markers}
         handleMarkerClick={handleMarkerClick}
         selectedMarker={selectedMarker}
