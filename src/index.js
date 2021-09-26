@@ -14,10 +14,9 @@ function App() {
   const [selectedMarker, setSelectedMarker] = useState(null);
   const [showSidebar, setShowSidebar] = useState(true);
 
-  
   useEffect(() => {
       _getTodaysDate();
-  })
+  }, [])
 
   // function which returns date string in YYYYMMDD format which is required for the Forsquare API
   const _getTodaysDate = () => {
@@ -33,13 +32,13 @@ function App() {
     setTodaysDate(dateToday);
   }
 
-  const getData = (searchString) => {
+  const getData = (e, searchString) => {
+    e.preventDefault();
     var clientID = process.env.REACT_APP_FOURSQUARE_API_CLIENT_KEY,
       clientSecret = process.env.REACT_APP_FOURSQUARE_API_CLIENT_SECRET_KEY;
 
     // fetches park around NYC area, returns ten results max
-    fetch('https://api.foursquare.com/v2/venues/search?ll=40.7508,-73.9890&limit=20&client_id='+ clientID 
-      +'&client_secret=' + clientSecret + '&query=' + searchString + '&v=' + todaysDate)
+    fetch(`https://api.foursquare.com/v2/venues/search?ll=40.7508,-73.9890&limit=20&client_id=${clientID}&client_secret=${clientSecret}&query=${searchString}&v=${todaysDate}`)
     // returns response in JSON format
     .then(res => res.json())
     .catch(error => console.log('Error message: ' + error))
@@ -74,6 +73,7 @@ function App() {
 
     setMarkers(markerObj);
     setFilteredMarkers(markerObj);
+    console.log(venues)
   }
 
   // handles state for selectedMarker from Sidebar

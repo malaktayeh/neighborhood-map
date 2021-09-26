@@ -14,7 +14,7 @@ const Sidebar = ({ getData }) => {
                     placeholder="Enter new search here"
                     onChange={(event) => { setQueryString(event.target.value) }}
                 />
-            <button role="button" aria-label="Search" onClick={() => getData(queryString)}>Search</button>
+            <button role="button" aria-label="Search" onClick={(e) => getData(e, queryString)}>Search</button>
             </form>
         </div>
     )
