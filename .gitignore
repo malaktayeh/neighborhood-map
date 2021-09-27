@@ -1,7 +1,7 @@
 .parcel-cache/
 node_modules/
 .vscode/
-
+.yarn
 .env*
 yarn-error.log
 .yarnvclean

@@ -1,5 +1,5 @@
 import ReactDom from 'react-dom';
-import React, { useState, useEffect }  from 'react';
+import React, { useState, useEffect, useRef }  from 'react';
 import escapeRegExp from 'escape-string-regexp';
 import Map from './components/Map';
 import Sidebar from './components/Sidebar';
@@ -7,12 +7,14 @@ import data from './data/park_data.json';
 import './app.css';
 
 function App() {
-  const [foursquareData, setFourSquareData] = useState(data);
+  const [fourSquareData, setFourSquareData] = useState();
   const [todaysDate, setTodaysDate] = useState('');
-  const [markers, setMarkers] = useState({});
-  const [filteredMarkers, setFilteredMarkers] = useState({});
+  const [markers, setMarkers] = useState(data.response.venues);
+  const [filteredMarkers, setFilteredMarkers] = useState([]);
   const [selectedMarker, setSelectedMarker] = useState(null);
   const [showSidebar, setShowSidebar] = useState(true);
+
+  console.log(markers)
 
   useEffect(() => {
       _getTodaysDate();
@@ -43,37 +45,42 @@ function App() {
     .then(res => res.json())
     .catch(error => console.log('Error message: ' + error))
     // saves search result in state
-    .then(foursquareResult => setFourSquareData(foursquareResult))
+    .then(res => {
+      setFourSquareData(res);
+      console.log(res)})
     // parses new data
-    .then(() => _parseData())
+    // .then(() => _parseData())
   }
 
   const _parseData = () => {
-    const foursquareResult = foursquareData;
-    const venues = foursquareResult.response.venues;
-    const markerObj = {};
+    console.log(fourSquareData)
+    const foursquareResult = fourSquareData;
+    const venues = fourSquareData.response.venues;
+    const markerArr = [];
   
     // check if query was successful, which will give us code 200, only then parse through data
-      if (foursquareResult.meta.code === 200 && foursquareData !== undefined) {
+      if (foursquareResult.meta.code === 200 && foursquareData.response.venues.length !== 0) {
         // save name, lat and long, and the formatted address of location
-        for (let i = 0; i < venues.length; i++) {
-          markerObj[i] = { 
-            title: venues[i].name,
+        for (let i = 0, l = venues.length; i < l; i++) {
+          markerArr[i] = {
+            id: venues.id,
+            name: venues[i].name,
             location: {
               lat: venues[i].location.lat, 
               lng: venues[i].location.lng 
               },
-            address: venues[i].location.address,
+            address: venues[i].location.address !== undefined ? venues[i].location.address : '',
             city: venues[i].location.city,
             state: venues[i].location.state,
-            zip: venues[i].location.postalCode
+            postalCode: venues[i].location.postalCode
           }
         }
       }
 
-    setMarkers(markerObj);
-    setFilteredMarkers(markerObj);
-    console.log(venues)
+      console.log(markerArr)
+
+    setMarkers(markerArr);
+    setFilteredMarkers(markerArr);
   }
 
   // handles state for selectedMarker from Sidebar
