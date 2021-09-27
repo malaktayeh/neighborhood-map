@@ -2,7 +2,7 @@ import React from 'react';
 
 const Locations = ({ markers }) => {
     return(
-        <div id="locationList" style={{overflow: "hidden"}}>
+        <div id="locationList">
             <ul style={{listStyleType: "none", padding: 0, margin: 0}}>
                 {markers.map((marker) => 
                     <li key={marker.id}>
@@ -10,7 +10,6 @@ const Locations = ({ markers }) => {
                     </li>
                 )}
             </ul>
-            <p>TEST</p>
         </div>
     )
 }
